@@ -1,7 +1,8 @@
+import PostModal from "@/components/PostModal";
 import SideBer from "@/components/SideBer";
 import TimeLine from "@/components/User/TimeLine";
 import UserCard from "@/components/User/UserCard";
-
+const isOpen = false;
 export default function Home() {
   return (
     <div className="container mx-auto px-4 relative">
@@ -16,6 +17,7 @@ export default function Home() {
           <UserCard />
         </div>
       </div>
+      {isOpen && <PostModal />}
     </div>
   );
 }
