@@ -20,7 +20,7 @@ export default function SideBer() {
               className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-200 transition"
             >
               {menu.icon}
-              <span>{menu.label}</span>
+              <span className="hidden lg:inline">{menu.label}</span>
             </Link>
           </li>
         ))}
