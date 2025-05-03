@@ -19,8 +19,8 @@ export default function SideBer() {
               href="/"
               className="flex items-center gap-3 rounded-lg hover:bg-gray-200 transition p-0 lg:px-4 lg:py-2"
             >
-              <span className="mx-auto lg:m-0">{menu.icon}</span>
-              <span className="hidden lg:inline">{menu.label}</span>
+              <span className="mx-auto xl:m-0">{menu.icon}</span>
+              <span className="hidden xl:inline">{menu.label}</span>
             </Link>
           </li>
         ))}
