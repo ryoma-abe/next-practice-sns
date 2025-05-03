@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProfilePage() {
   return (
@@ -15,7 +16,7 @@ export default function ProfilePage() {
           className="rounded-full"
         />
         <div>
-          <h1 className="text-2xl font-bold">りょうま</h1>
+          <h2 className="text-2xl font-bold">りょうま</h2>
           <p className="text-gray-500">フリーランスエンジニア</p>
         </div>
       </div>
@@ -32,6 +33,9 @@ export default function ProfilePage() {
         <p>
           <span className="font-semibold">所在地：</span> 北海道・十勝
         </p>
+      </div>
+      <div className="mt-10">
+        <Link href="/">←ホームへ戻る</Link>
       </div>
     </div>
   );
