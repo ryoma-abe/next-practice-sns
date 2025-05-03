@@ -4,7 +4,7 @@ import UserCard from "@/components/User/UserCard";
 
 export default function Home() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto relative">
       <div className="grid grid-cols-10 gap-10 min-h-dvh">
         <div className="col-span-2">
           <SideBer />
