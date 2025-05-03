@@ -12,7 +12,7 @@ export default function Home() {
         <div className="col-span-5">
           <TimeLine />
         </div>
-        <div className="col-span-3">
+        <div className="col-span-3 hidden md:block">
           <UserCard />
         </div>
       </div>
