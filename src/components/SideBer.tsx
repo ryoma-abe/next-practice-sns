@@ -1,9 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { Home, Search, Bell, PenLine, User } from "lucide-react"; // アイコンは適宜変更可
+import { Home, Search, Bell, PenLine, User } from "lucide-react";
 
-export default function SideBer() {
+type SideBerProps = {
+  onPostClick: () => void;
+};
+
+export default function SideBer({ onPostClick }: SideBerProps) {
   const menus = [
     { label: "ホーム", icon: <Home size={20} />, href: "/" },
     { label: "検索", icon: <Search size={20} />, href: "/" },
@@ -11,9 +15,9 @@ export default function SideBer() {
     {
       label: "ポスト",
       icon: <PenLine size={20} />,
-      onClick: () => alert(),
+      onClick: onPostClick,
     },
-    { label: "プロフィール", icon: <User size={20} />, href: "/" },
+    { label: "プロフィール", icon: <User size={20} />, href: "/profile" },
   ];
 
   return (
