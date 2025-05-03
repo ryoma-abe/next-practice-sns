@@ -17,7 +17,7 @@ export default function SideBer({ onPostClick }: SideBerProps) {
       icon: <PenLine size={20} />,
       onClick: onPostClick,
     },
-    { label: "プロフィール", icon: <User size={20} />, href: "/" },
+    { label: "プロフィール", icon: <User size={20} />, href: "/profile" },
   ];
 
   return (

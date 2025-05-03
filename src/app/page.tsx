@@ -13,7 +13,6 @@ export default function Home() {
     <div className="container mx-auto px-4 relative">
       <div className="grid grid-cols-10 gap-10 min-h-dvh">
         <div className="col-span-3 sm:col-span-2 lg:col-span-2">
-          {/* openPostModal を渡す */}
           <SideBer onPostClick={() => setIsOpen(true)} />
         </div>
         <div className="col-span-7 sm:col-span-8 lg:col-span-5">
