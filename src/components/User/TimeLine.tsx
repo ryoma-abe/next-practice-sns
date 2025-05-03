@@ -5,6 +5,11 @@ export default function TimeLine() {
     <div className="space-y-8">
       <User />
       <User />
+      <User />
+      <User />
+      <User />
+      <User />
+      <User />
     </div>
   );
 }

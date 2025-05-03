@@ -4,7 +4,7 @@ export default function SideBer() {
   const menus = ["ホーム", "検索", "通知", "メッセージ", "プロフィール"];
 
   return (
-    <nav className="flex flex-col gap-4 p-4 text-lg">
+    <nav className="flex flex-col gap-4 p-4 text-lg fixed bg-sky-100 h-full">
       <ul className="flex flex-col gap-6">
         {menus.map((label, index) => (
           <li key={index}>
