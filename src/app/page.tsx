@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="container mx-auto">
       <div className="grid grid-cols-10 gap-10 min-h-dvh">
-        <div className="col-span-2 bg-gray-100">
+        <div className="col-span-2">
           <SideBer />
         </div>
         <div className="col-span-5">
