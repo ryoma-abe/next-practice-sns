@@ -1,19 +1,43 @@
+"use client";
+
 import Link from "next/link";
+import { Home, Search, Bell, PenLine, User } from "lucide-react"; // アイコンは適宜変更可
 
 export default function SideBer() {
-  const menus = ["ホーム", "検索", "通知", "メッセージ", "プロフィール"];
+  const menus = [
+    { label: "ホーム", icon: <Home size={20} />, href: "/" },
+    { label: "検索", icon: <Search size={20} />, href: "/" },
+    { label: "通知", icon: <Bell size={20} />, href: "/" },
+    {
+      label: "ポスト",
+      icon: <PenLine size={20} />,
+      onClick: () => alert(),
+    },
+    { label: "プロフィール", icon: <User size={20} />, href: "/" },
+  ];
 
   return (
-    <nav className="flex flex-col gap-4 p-4 text-lg fixed bg-sky-100 h-full">
+    <nav className="flex flex-col gap-4 p-4 text-lg sticky top-0 h-[100vh] shadow-xl">
       <ul className="flex flex-col gap-6">
-        {menus.map((label, index) => (
+        {menus.map((menu, index) => (
           <li key={index}>
-            <Link
-              href="/"
-              className="block px-4 py-2 rounded-lg hover:bg-gray-200 transition"
-            >
-              {label}
-            </Link>
+            {menu.href ? (
+              <Link
+                href={menu.href}
+                className="flex items-center gap-3 rounded-lg hover:bg-gray-200 transition p-0 lg:px-4 lg:py-2"
+              >
+                <span className="mx-auto xl:m-0">{menu.icon}</span>
+                <span className="hidden xl:inline">{menu.label}</span>
+              </Link>
+            ) : (
+              <button
+                onClick={menu.onClick}
+                className="flex items-center gap-3 w-full rounded-lg hover:bg-gray-200 transition p-0 lg:px-4 lg:py-2"
+              >
+                <span className="mx-auto xl:m-0">{menu.icon}</span>
+                <span className="hidden xl:inline">{menu.label}</span>
+              </button>
+            )}
           </li>
         ))}
       </ul>

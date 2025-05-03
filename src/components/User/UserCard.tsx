@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function UserCard() {
   return (
-    <div className="p-6 bg-white rounded-xl shadow-md flex flex-col items-center gap-4 fixed">
+    <div className="p-6 rounded-xl shadow-xl flex flex-col items-center gap-4 sticky top-6">
       <Image
         src="/images/demo.png"
         alt="でも"

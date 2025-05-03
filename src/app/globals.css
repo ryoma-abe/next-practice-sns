@@ -1,5 +1,5 @@
 @import "tailwindcss";
 
 body {
-  min-height: 100vh;
+  @apply min-h-screen bg-blue-200 text-black;
 }
