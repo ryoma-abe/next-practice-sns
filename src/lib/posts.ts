@@ -1,4 +1,3 @@
-// src/lib/posts.ts
 import { PrismaClient } from "@/generated/prisma"; // ← generated配下でOKです
 const prisma = new PrismaClient();
 

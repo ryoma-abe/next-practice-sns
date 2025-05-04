@@ -3,11 +3,7 @@
 import Link from "next/link";
 import { Home, Search, Bell, PenLine, User } from "lucide-react";
 
-type SideBerProps = {
-  onPostClick: () => void;
-};
-
-export default function SideBer({ onPostClick }: SideBerProps) {
+export default function SideBer() {
   const menus = [
     { label: "ホーム", icon: <Home size={20} />, href: "/" },
     { label: "検索", icon: <Search size={20} />, href: "/" },
@@ -15,7 +11,6 @@ export default function SideBer({ onPostClick }: SideBerProps) {
     {
       label: "ポスト",
       icon: <PenLine size={20} />,
-      onClick: onPostClick,
     },
     { label: "プロフィール", icon: <User size={20} />, href: "/profile" },
   ];
@@ -34,10 +29,7 @@ export default function SideBer({ onPostClick }: SideBerProps) {
                 <span className="hidden xl:inline">{menu.label}</span>
               </Link>
             ) : (
-              <button
-                onClick={menu.onClick}
-                className="flex items-center gap-3 w-full rounded-lg hover:bg-gray-200 transition p-0 lg:px-4 lg:py-2"
-              >
+              <button className="flex items-center gap-3 w-full rounded-lg hover:bg-gray-200 transition p-0 lg:px-4 lg:py-2">
                 <span className="mx-auto xl:m-0">{menu.icon}</span>
                 <span className="hidden xl:inline">{menu.label}</span>
               </button>
