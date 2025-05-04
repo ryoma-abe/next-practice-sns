@@ -1,9 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
 
 export default function PostModal({ onClose }: { onClose: () => void }) {
   const [content, setContent] = useState("");
+  const [isPending, startTransition] = useTransition();
+  const router = useRouter();
+
   const handleSubmit = async () => {
     if (!content.trim()) return;
 
@@ -14,7 +18,12 @@ export default function PostModal({ onClose }: { onClose: () => void }) {
     });
 
     setContent(""); // フォームをリセット
-    onClose(); // モーダルを閉じるなど
+    onClose(); // モーダルを閉じる
+
+    // 🔁 TimeLine（Server Component）を再フェッチ
+    startTransition(() => {
+      router.refresh();
+    });
   };
 
   return (
@@ -36,8 +45,9 @@ export default function PostModal({ onClose }: { onClose: () => void }) {
           <button
             className="mt-6 px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
             onClick={handleSubmit}
+            disabled={isPending}
           >
-            投稿
+            {isPending ? "投稿中..." : "投稿"}
           </button>
         </div>
       </div>

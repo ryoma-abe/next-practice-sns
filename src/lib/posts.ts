@@ -1,9 +1,13 @@
-// src/lib/posts.ts
-import { PrismaClient } from "@/generated/prisma"; // ← generated配下でOKです
+import { PrismaClient } from "@/generated/prisma";
 const prisma = new PrismaClient();
 
+// ⏱️ 遅延用の関数
+// function delay(ms: number) {
+//   return new Promise((resolve) => setTimeout(resolve, ms));
+// }
+
 export async function fetchPosts() {
-  return await prisma.post.findMany({
+  return prisma.post.findMany({
     orderBy: { createdAt: "desc" },
   });
 }
