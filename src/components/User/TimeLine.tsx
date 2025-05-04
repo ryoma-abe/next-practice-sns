@@ -1,25 +1,18 @@
-// ダミーデータ
-const articles = [
-  { id: 1, title: "タイトル1" },
-  { id: 2, title: "タイトル2" },
-  { id: 3, title: "タイトル3" },
-];
-
-// 3秒待機
-async function fetchArticles() {
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-  return articles;
-}
+import { fetchPosts } from "@/lib/posts";
 
 export default async function TimeLine() {
-  const articles = await fetchArticles();
+  const posts = await fetchPosts();
+
   return (
     <div className="p-4 space-y-4">
-      <ul>
-        {articles.map((article) => (
-          <li key={article.id}>{article.title}</li>
-        ))}
-      </ul>
+      {posts.map((post) => (
+        <div key={post.id} className="border p-4 rounded-md bg-white shadow">
+          <p className="text-gray-800">{post.content}</p>
+          <p className="text-xs text-gray-500 mt-2">
+            {new Date(post.createdAt).toLocaleString()}
+          </p>
+        </div>
+      ))}
     </div>
   );
 }
