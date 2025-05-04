@@ -8,7 +8,7 @@ export default function UserCard() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <div className="p-6 rounded-xl shadow-xl flex flex-col items-center gap-4 sticky top-6">
+      <div className="p-6 rounded-xl shadow-xl flex flex-col items-center gap-4">
         <Image
           src="/images/demo.png"
           alt="でも"
