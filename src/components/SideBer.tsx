@@ -12,7 +12,7 @@ export default function SideBer() {
   ];
 
   return (
-    <nav className="p-4 text-lg shadow-xl h-full">
+    <nav className="py-4 lg:p-4 text-lg shadow-xl h-full">
       <ul className="flex flex-col gap-6">
         {menus.map((menu, index) => (
           <li key={index}>

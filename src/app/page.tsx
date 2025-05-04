@@ -7,15 +7,15 @@ export default function Home() {
   return (
     <div className="container mx-auto px-4 relative">
       <div className="min-h-dvh">
-        <div className="fixed top-0 left-0 h-screen w-[20%]">
+        <div className="fixed top-0 left-0 h-screen w-[10%] xl:w-[20%]">
           <SideBer />
         </div>
-        <div className="w-[70%] ml-auto  lg:w-[40%] lg:mx-auto ">
+        <div className="w-[90%] ml-auto  lg:w-[40%] lg:mx-auto ">
           <Suspense fallback={<p>TimeLineを読み込み中...</p>}>
             <TimeLine />
           </Suspense>
         </div>
-        <div className="hidden lg:block fixed top-6 right-0 w-[30%]">
+        <div className="hidden lg:block fixed top-6 right-5 w-[20%]">
           <UserCard />
         </div>
       </div>
