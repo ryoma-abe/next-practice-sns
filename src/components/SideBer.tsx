@@ -1,17 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { Home, Search, Bell, PenLine, User } from "lucide-react";
+import { Home, Search, Bell, User } from "lucide-react";
 
 export default function SideBer() {
   const menus = [
     { label: "ホーム", icon: <Home size={20} />, href: "/" },
     { label: "検索", icon: <Search size={20} />, href: "/" },
     { label: "通知", icon: <Bell size={20} />, href: "/" },
-    {
-      label: "ポスト",
-      icon: <PenLine size={20} />,
-    },
     { label: "プロフィール", icon: <User size={20} />, href: "/profile" },
   ];
 
