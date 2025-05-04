@@ -1,6 +1,5 @@
 import { fetchPosts } from "@/lib/posts";
 
-
 export default async function TimeLine() {
   const posts = await fetchPosts();
 

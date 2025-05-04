@@ -12,7 +12,7 @@ export default function SideBer() {
   ];
 
   return (
-    <nav className="flex flex-col gap-4 p-4 text-lg sticky top-0">
+    <nav className="fixed top-0 left-0 h-screen w-[220px] p-4 text-lg shadow-xl">
       <ul className="flex flex-col gap-6">
         {menus.map((menu, index) => (
           <li key={index}>

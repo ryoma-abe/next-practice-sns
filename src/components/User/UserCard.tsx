@@ -27,7 +27,9 @@ export default function UserCard() {
           voluptatibus? Id, totam praesentium.
         </p>
         <div>
-          <button onClick={() => setIsOpen(true)}>ポストする</button>
+          <button className="border py-2 px-8" onClick={() => setIsOpen(true)}>
+            ポストする
+          </button>
         </div>
       </div>
       {isOpen && <PostModal onClose={() => setIsOpen(false)} />}
