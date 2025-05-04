@@ -1,19 +1,7 @@
-import { useEffect, useState } from "react";
+import { fetchPosts } from "@/lib/posts";
 
-type Post = {
-  id: number;
-  content: string;
-  createdAt: string;
-};
-
-export default function TimeLine() {
-  const [posts, setPosts] = useState<Post[]>([]);
-
-  useEffect(() => {
-    fetch("/api/posts")
-      .then((res) => res.json())
-      .then((data) => setPosts(data));
-  }, []);
+export default async function TimeLine() {
+  const posts = await fetchPosts();
 
   return (
     <div className="p-4 space-y-4">
