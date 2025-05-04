@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import PostModal from "@/components/PostModal";
 import SideBer from "@/components/SideBer";
 import TimeLine from "@/components/User/TimeLine";
@@ -16,7 +16,9 @@ export default function Home() {
           <SideBer onPostClick={() => setIsOpen(true)} />
         </div>
         <div className="col-span-7 sm:col-span-8 lg:col-span-5">
-          <TimeLine />
+          <Suspense fallback={<p>TimeLineを読み込み中...</p>}>
+            <TimeLine />
+          </Suspense>
         </div>
         <div className="col-span-3 hidden lg:block">
           <UserCard />
