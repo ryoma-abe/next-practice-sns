@@ -1,5 +1,5 @@
 import { PrismaClient } from "@/generated/prisma";
-const prisma = new PrismaClient();
+export const prisma = new PrismaClient();
 
 // ⏱️ 遅延用の関数
 // function delay(ms: number) {
